@@ -44,10 +44,16 @@ class Game extends React.Component {
       return null;
     }
     const cards = this.state.cards.slice();
-    this.setState({
-      cards: cards.fill(false),
-      flipped: 0,
-    });
+    const flipped = document.querySelectorAll('.flipped');
+    if (flipped[0].dataset.id === flipped[1].dataset.id) {
+      flipped.forEach((card) => {
+        card.style.animation = 'Success 500ms ease-in-out';
+      });
+      // this.setState({
+      //   cards: cards.fill(false),
+      //   flipped: 0,
+      // });
+    }
   }
 
   componentDidUpdate() {
