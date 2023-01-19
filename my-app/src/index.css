@@ -53,3 +53,35 @@ body {
 .back {
   background: #f00;
 }
+
+.card:hover {
+  /* animation: Success 500ms ease-in-out; */
+  /* animation: Failure 500ms ease-in-out; */
+}
+
+@keyframes Success {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.25;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes Failure {
+  0% {
+    rotate: z 0;
+  }
+  25% {
+    rotate: z 10deg;
+  }
+  75% {
+    rotate: z -10deg;
+  }
+  100% {
+    rotate: z 0;
+  }
+}

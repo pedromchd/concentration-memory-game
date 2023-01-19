@@ -4,7 +4,7 @@ import './index.css';
 
 function Card(props) {
   return (
-    <div className="wrapper">
+    <div className="wrapper" data-id="1">
       <div className={'card ' + (props.isFlipped ? 'flipped' : '')} onClick={props.onClick}>
         <div className="face front"></div>
         <div className="face back"></div>
@@ -18,17 +18,44 @@ class Game extends React.Component {
     super(props);
     this.state = {
       cards: Array(24).fill(false),
+      flipped: 0,
     };
   }
 
   handleClick(i) {
+    const flipped = this.state.flipped;
     const cards = this.state.cards.slice();
-    cards[i] = !cards[i];
-    this.setState({ cards: cards });
+    if (cards[i]) {
+      return null;
+    }
+    cards[i] = true;
+    this.setState({
+      cards: cards,
+      flipped: flipped + 1,
+    });
   }
 
   renderCard(i) {
     return <Card isFlipped={this.state.cards[i]} onClick={() => this.handleClick(i)} />;
+  }
+
+  checkCards() {
+    if (this.state.flipped < 2) {
+      return null;
+    }
+    const cards = this.state.cards.slice();
+    this.setState({
+      cards: cards.fill(false),
+      flipped: 0,
+    });
+  }
+
+  componentDidUpdate() {
+    if (this.state.flipped < 2) {
+      return null;
+    }
+    const board = document.querySelector('.board');
+    board.addEventListener('transitionend', () => this.checkCards());
   }
 
   render() {
