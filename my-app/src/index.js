@@ -5,7 +5,7 @@ import './index.css';
 function Card(props) {
   return (
     <div className="wrapper" data-id="1">
-      <div className={'card ' + (props.isFlipped ? 'flipped' : '')} onClick={props.onClick}>
+      <div className={`card ${props.isFlipped ? 'flipped' : ''}`} onClick={props.onClick}>
         <div className="face front"></div>
         <div className="face back"></div>
       </div>
@@ -36,30 +36,27 @@ class Game extends React.Component {
   }
 
   renderCard(i) {
-    return <Card isFlipped={this.state.cards[i]} onClick={() => this.handleClick(i)} />;
+    return <Card key={i} isFlipped={this.state.cards[i]} onClick={() => this.handleClick(i)} />;
   }
 
   checkCards() {
     if (this.state.flipped < 2) {
       return null;
     }
-    const cards = this.state.cards.slice();
-    const flipped = document.querySelectorAll('.flipped');
-    if (flipped[0].dataset.id === flipped[1].dataset.id) {
-      flipped.forEach((card) => {
-        card.style.animation = 'Success 500ms ease-in-out';
-      });
-      // this.setState({
-      //   cards: cards.fill(false),
-      //   flipped: 0,
-      // });
+    const [card1, card2] = document.getElementsByClassName('flipped');
+    if (card1.dataset.id === card2.dataset.id) {
+      [card1, card2].forEach((c) => (c.style.animation = 'Success 500ms ease-in-out'));
+    } else {
+      [card1, card2].forEach((c) => (c.style.animation = 'Failure 500ms ease-in-out'));
     }
+    // const cards = this.state.cards.slice();
+    // this.setState({
+    //   cards: cards.fill(false),
+    //   flipped: 0,
+    // });
   }
 
-  componentDidUpdate() {
-    if (this.state.flipped < 2) {
-      return null;
-    }
+  componentDidMount() {
     const board = document.querySelector('.board');
     board.addEventListener('transitionend', () => this.checkCards());
   }

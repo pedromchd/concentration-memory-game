@@ -54,11 +54,6 @@ body {
   background: #f00;
 }
 
-.card:hover {
-  /* animation: Success 500ms ease-in-out; */
-  /* animation: Failure 500ms ease-in-out; */
-}
-
 @keyframes Success {
   0% {
     scale: 1;
