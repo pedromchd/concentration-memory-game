@@ -1,82 +1,48 @@
 * {
-  box-sizing: border-box;
   user-select: none;
   -webkit-user-drag: none;
 }
 
 body {
   margin: unset;
-  background: #252525;
 }
 
 #root {
-  height: 100vmin;
   display: grid;
+  height: 100vmin;
   place-items: center;
 }
 
 .board {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 1.5rem;
-}
-
-.wrapper {
-  perspective: 50rem;
+  grid-template-columns: 1fr;
 }
 
 .card {
-  width: 100px;
-  height: 150px;
   position: relative;
-  transition: transform 500ms ease-out;
   transform-style: preserve-3d;
+  height: 150px;
+  width: 100px;
+  transition: transform 500ms ease;
 }
 
-.flipped {
-  transform: rotateY(180deg);
+.card:hover {
+  transform: perspective(25rem) rotateY(180deg);
 }
 
 .face {
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
   position: absolute;
   backface-visibility: hidden;
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
 }
 
 .front {
-  background: #0f0;
   transform: rotateY(180deg);
+  background: #0f0;
 }
 
 .back {
   background: #f00;
-}
-
-@keyframes Success {
-  0% {
-    scale: 1;
-  }
-  50% {
-    scale: 1.15;
-  }
-  100% {
-    scale: 1;
-  }
-}
-
-@keyframes Failure {
-  0% {
-    rotate: z 0;
-  }
-  25% {
-    rotate: z 10deg;
-  }
-  75% {
-    rotate: z -10deg;
-  }
-  100% {
-    rotate: z 0;
-  }
 }
