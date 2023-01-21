@@ -1,0 +1,31 @@
+{
+  "recommendations": [
+    "abusaidm.html-snippets",
+    "alefragnani.project-manager",
+    "christian-kohler.path-intellisense",
+    "codezombiech.gitignore",
+    "dbaeumer.vscode-eslint",
+    "donjayamanne.git-extension-pack",
+    "donjayamanne.githistory",
+    "dsznajder.es7-react-js-snippets",
+    "eamodio.gitlens",
+    "ecmel.vscode-html-css",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "felipecaputo.git-project-manager",
+    "GitHub.vscode-pull-request-github",
+    "HookyQR.beautify",
+    "humao.rest-client",
+    "kamikillerto.vscode-colorize",
+    "mgmcdermott.vscode-language-babel",
+    "mhutchie.git-graph",
+    "mrmlnc.vscode-postcss-sorting",
+    "ms-vscode.atom-keybindings",
+    "Orta.vscode-jest",
+    "pranaygp.vscode-css-peek",
+    "styled-components.vscode-styled-components",
+    "xabikos.JavaScriptSnippets",
+    "Zignd.html-css-class-completion",
+    "ziyasal.vscode-open-in-github"
+  ]
+}
