@@ -18,16 +18,16 @@ function Card(props) {
 }
 
 function Board(props) {
-  const [peers, setPeers] = useState([1, 2, 3]);
+  const [pairs, setPairs] = useState([1, 2, 3]);
 
   useEffect(() => {
-    const values = peers.concat(peers);
-    setPeers(values.sort((a, b) => 0.5 - Math.random()));
+    const values = pairs.concat(pairs);
+    setPairs(values.sort((a, b) => 0.5 - Math.random()));
   }, []);
 
   return (
     <div className="board">
-      {peers.map((value) => (
+      {pairs.map((value) => (
         <Card value={value} />
       ))}
     </div>
