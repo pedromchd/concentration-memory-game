@@ -41,7 +41,9 @@ body {
 
 .front {
   transform: rotateY(180deg);
+  display: grid;
   background: #0f0;
+  place-items: center;
 }
 
 .back {

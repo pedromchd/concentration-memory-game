@@ -11,18 +11,25 @@ function Card(props) {
       className={cx('card', { flipped: isFlipped })}
       onClick={() => setFlipped(!isFlipped)}
     >
-      <div className="face front"></div>
+      <div className="face front">{props.value}</div>
       <div className="face back"></div>
     </div>
   );
 }
 
 function Board(props) {
+  const [peers, setPeers] = useState([1, 2, 3]);
+
+  useEffect(() => {
+    const values = peers.concat(peers);
+    setPeers(values.sort((a, b) => 0.5 - Math.random()));
+  }, []);
+
   return (
     <div className="board">
-      <Card />
-      <Card />
-      <Card />
+      {peers.map((value) => (
+        <Card value={value} />
+      ))}
     </div>
   );
 }
