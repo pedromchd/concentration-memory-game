@@ -1,19 +1,4 @@
 {
-  "files.exclude": {
-    "**/node_modules/": true
-  },
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "javascript.preferences.quoteStyle": "single",
-  "prettier.singleQuote": true,
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "postcssSorting.config": {
     "properties-order": [
       "order",
