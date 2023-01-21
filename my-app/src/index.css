@@ -15,7 +15,8 @@ body {
 
 .board {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
 }
 
 .card {
@@ -26,7 +27,7 @@ body {
   transition: transform 500ms ease;
 }
 
-.card:hover {
+.flipped {
   transform: perspective(25rem) rotateY(180deg);
 }
 
