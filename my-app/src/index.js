@@ -9,7 +9,7 @@ function Card(props) {
   return (
     <div
       className={cx('card', { flipped: isFlipped })}
-      onClick={() => setFlipped(!isFlipped)}
+      onClick={props.onClick}
     >
       <div className="face front">{props.value}</div>
       <div className="face back"></div>
@@ -25,10 +25,19 @@ function Board(props) {
     setPairs(values.sort((a, b) => 0.5 - Math.random()));
   }, []);
 
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (count === 2) {
+      alert('a');
+      return setCount(0);
+    }
+  }, [count]);
+
   return (
     <div className="board">
       {pairs.map((value) => (
-        <Card value={value} />
+        <Card value={value} onClick={() => setCount(count + 1)} />
       ))}
     </div>
   );
