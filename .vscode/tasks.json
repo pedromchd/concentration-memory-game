@@ -4,18 +4,16 @@
     {
       "type": "npm",
       "script": "install",
-      "path": "my-app",
       "group": "clean",
       "problemMatcher": [],
-      "label": "npm: install - my-app",
+      "label": "npm: install",
       "detail": "install dependencies from package"
     },
     {
       "type": "npm",
       "script": "start",
-      "path": "my-app",
       "problemMatcher": [],
-      "label": "npm: start - my-app",
+      "label": "npm: start",
       "detail": "react-scripts start",
       "group": {
         "kind": "build",
@@ -25,10 +23,9 @@
     {
       "type": "npm",
       "script": "build",
-      "path": "my-app",
       "group": "build",
       "problemMatcher": [],
-      "label": "npm: build - my-app",
+      "label": "npm: build",
       "detail": "react-scripts build"
     }
   ]

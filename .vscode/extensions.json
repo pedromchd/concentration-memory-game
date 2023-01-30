@@ -7,6 +7,8 @@
     "esbenp.prettier-vscode",
     "mgmcdermott.vscode-language-babel",
     "mrmlnc.vscode-postcss-sorting",
+    "ms-vscode.vscode-typescript-next",
     "styled-components.vscode-styled-components",
+    "syler.sass-indented",
   ]
 }
