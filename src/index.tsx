@@ -1,14 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import cx from 'classnames';
 import './index.scss';
 
-function Game(props: any) {
-  return (
-    <div>
-      <h1>Hello world!</h1>
-    </div>
-  );
+function Game(props) {
+  return;
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
